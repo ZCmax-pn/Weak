@@ -589,11 +589,11 @@ button.cta-start:hover{
     width: 1226px;
     display: grid;
     grid-template-columns: 418px 327px 327px;
-    grid-template-rows: repeat(2, auto); /* Две строки автоматической высоты */
-    gap: 20px; /* Добавляем отступ между карточками */
+    grid-template-rows: repeat(2, auto); 
+    gap: 20px; 
     justify-content: space-between;
     margin-top: 116px;
-    align-items: start; /* Выравниваем все элементы по верху */
+    align-items: start; 
 } 
 .blog-card {
     width: 100%;
@@ -602,8 +602,8 @@ button.cta-start:hover{
 .blog-card.main-card {  
     grid-column: 1;
     grid-row: 1 / span 2;
-    height: 100%; /* Занимает всю доступную высоту двух строк */
-    align-self: start; /* Ключевое - выравниваем по верху */
+    height: 100%; 
+    align-self: start; 
 }
 .main-card-content {
     width: 100%;
@@ -718,12 +718,9 @@ button.cta-start:hover{
     font-weight: 800;
     font-size: 25.11px;
     line-height: 30.29px;
-    position: absolute;
-    top: 61.97px; 
-    left: 26.79px;
     width: 277px;
     height: 90.74px;
-    margin: 0;
+    margin: 61.97px 0 0 26.79px;
 }
 
 .blog-content,
@@ -743,29 +740,31 @@ button.cta-start:hover{
 /* Основной цветной блок */
 .section-future {
     max-width: 1440px;
-    width: 100%;
+    
     background: #031B34;
-    margin-top: 133.79px;
-    margin-bottom: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    margin: 133.79px auto 18px auto;
+
     position: relative;
     padding-top: 196px;
     padding-bottom: 103px;
+    box-sizing: border-box;
+
 }
 
 /* Контейнер для центрирования контента */
 .section-future-container {
-    max-width: 1226px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    /* max-width: 1226px;
+    
+    margin: 0 auto; */
+    /* display: flex;
+    justify-content: center; */
 }
 
 /* Обертка для контента с отступом от верха цветного блока */
 .section-future-content {
+    max-width: 1226px;
+    
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;

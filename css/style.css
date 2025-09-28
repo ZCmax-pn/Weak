@@ -72,6 +72,7 @@ ul {
 .container{
     max-width: 1226px;
     margin: 0 auto;
+    padding: 0 20px
 }
 
 /* Шапка */
@@ -135,6 +136,14 @@ ul {
 /* Welcome (основная секция) */
 .welcome .container {
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: flex-start;
+
+}
+
+.welcome1 {
+    display: flex;
     justify-content: space-between;
     align-items: flex-start;
 
@@ -144,6 +153,7 @@ ul {
     margin-top: 96px;
     flex-shrink: 0;
 }
+
 .welcome-left{
     margin-bottom: 33px;
     font-size: 62px;
@@ -207,6 +217,7 @@ button.welcome_start:hover{
     align-items: center;
     margin-top: 37px;
 }
+
 .text-people{
     font-size: 12px;
     font-weight: 500;
@@ -216,14 +227,14 @@ button.welcome_start:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    position: absolute;
-    padding-top: 120px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
+    margin-top: 120px;
     gap: 46px;
+    width: 100vw; 
+    margin-left: calc(-50vw + 50%); 
+    padding: 0 20px;
+    
 }
+
 /* Про GPT-4 */
 .GPT{
     display: flex;
@@ -578,11 +589,11 @@ button.cta-start:hover{
     width: 1226px;
     display: grid;
     grid-template-columns: 418px 327px 327px;
-    grid-template-rows: repeat(2, auto); /* Две строки автоматической высоты */
-    gap: 20px; /* Добавляем отступ между карточками */
+    grid-template-rows: repeat(2, auto); 
+    gap: 20px; 
     justify-content: space-between;
     margin-top: 116px;
-    align-items: start; /* Выравниваем все элементы по верху */
+    align-items: start; 
 } 
 .blog-card {
     width: 100%;
@@ -591,8 +602,8 @@ button.cta-start:hover{
 .blog-card.main-card {  
     grid-column: 1;
     grid-row: 1 / span 2;
-    height: 100%; /* Занимает всю доступную высоту двух строк */
-    align-self: start; /* Ключевое - выравниваем по верху */
+    height: 100%; 
+    align-self: start; 
 }
 .main-card-content {
     width: 100%;
@@ -663,6 +674,7 @@ button.cta-start:hover{
 .blog-text-container {
     width: 100%;
     height: 172px;
+    max-width: 283px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -676,7 +688,7 @@ button.cta-start:hover{
     text-align: left;
     letter-spacing: 0;
     width: 100%;    
-    align-self: flex-start; /* Исправлена опечатка */  
+    align-self: flex-start; 
 }
 
 /* - дата в большой карточке - */
@@ -696,23 +708,21 @@ button.cta-start:hover{
 
 .blog-title {
     font-weight: 800;
-    font-size: 19px;
+    font-size: 18.5px;
     line-height: 30.29px;
     margin: 10px 0;
-    white-space: nowrap;
+    width: 100%;
     
 }
 .main-card-blog-title {
     font-weight: 800;
     font-size: 25.11px;
     line-height: 30.29px;
-    position: absolute;
-    top: 61.97px; 
-    left: 26.79px;
-    width: 100%;
+    width: 277px;
     height: 90.74px;
-    margin: 0;
+    margin: 61.97px 0 0 26.79px;
 }
+
 .blog-content,
 .main-card-content {
     display: flex;
@@ -730,29 +740,31 @@ button.cta-start:hover{
 /* Основной цветной блок */
 .section-future {
     max-width: 1440px;
-    width: 100%;
+    
     background: #031B34;
-    margin-top: 133.79px;
-    margin-bottom: 18px;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
+    margin: 133.79px auto 18px auto;
+
     position: relative;
     padding-top: 196px;
     padding-bottom: 103px;
+    box-sizing: border-box;
+
 }
 
 /* Контейнер для центрирования контента */
 .section-future-container {
-    max-width: 1226px;
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
+    /* max-width: 1226px;
+    
+    margin: 0 auto; */
+    /* display: flex;
+    justify-content: center; */
 }
 
 /* Обертка для контента с отступом от верха цветного блока */
 .section-future-content {
+    max-width: 1226px;
+    
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -806,8 +818,9 @@ button.cta-start:hover{
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 30px;
+    margin-top: 140px;
 }
 
 /* Колонки футера */
@@ -816,6 +829,8 @@ button.cta-start:hover{
     min-width: 200px;
     text-align: left;
 }
+
+
 
 .footer-column h3 {
     color: #fff;
@@ -833,6 +848,37 @@ button.cta-start:hover{
     font-weight: 200;
     white-space: nowrap;
 }
+.footer-column-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;    
+}
+
+.footer-column-link a {
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 34px;
+    font-weight: 200;
+    text-decoration: none;
+    text-align: left;
+    white-space: nowrap;
+    min-width: 100px;
+}
+
+.footer-column-link a:hover {
+    color: #FF4820;
+}
+
+.straight-columns{
+    display: flex;
+    justify-content: space-between; 
+    align-items: flex-start;                  
+    flex-wrap: nowrap;             
+    flex: 1; 
+    gap: 130px;
+}
+
+
 /* Стили для изображения */
 .future-img {
     margin-bottom: -23px;
@@ -857,4 +903,12 @@ footer{
     font-size: 14px;
     font-weight: 400;
     line-height: 1.4;
+}
+
+.link-networks{
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 34px;
+    white-space: nowrap;
 }

@@ -1,0 +1,1631 @@
+@font-face {
+  font-family: "ManropeBold";
+  src: url(../fonts/Manrope-Bold.ttf);
+}
+@font-face {
+  font-family: "Manrope";
+  src: url(../fonts/Manrope-Regular.ttf);
+}
+
+@font-face {
+  font-family: "ManropeLight";
+  src: url(../fonts/Manrope-Light.ttf);
+}
+
+/* Общие стили */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  background-color: #040C18;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+.gradient-spot {
+  position: absolute;
+  border-radius: 50%;
+  background: #002853;
+  filter: blur(150px);
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "ManropeBold", sans-serif;
+  font-weight: 800;
+  margin: 0;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+a:hover {
+  transition: all 0.3s ease-out;
+}
+
+button {
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+  font-family: "Manrope", sans-serif;
+}
+
+button.btn-sign-primary:hover {
+  transition: all 0.3s ease-out;
+  background-color: #aa2f13;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 1226px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Стили для гамбургер-меню */
+.nav-button {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+  cursor: pointer;
+  z-index: 100;
+  background: none;
+  border: none;
+}
+
+.nav-button span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.nav-button.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.nav-button.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-button.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Шапка */
+.header {
+  padding-top: 62px;
+  position: relative;
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+.logo img {
+  width: 62px;
+  height: 16px;
+}
+
+.nav-header {
+  display: flex;
+  align-items: center;
+}
+
+.header-list {
+  display: flex;
+  gap: 46px;
+  margin-left: 67px;
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+
+.nav-header a {
+  font-size: 18px;
+  transition: color 0.3s ease-out;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.nav-header a:hover {
+  color: #FF4820;
+}
+
+/* Кнопки для десктопа */
+.desktop-buttons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 51px;
+  align-items: center;
+  margin-left: 249px;
+}
+
+.btn-sign {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  padding: 0;
+  height: auto;
+  width: auto;
+  transition: color 0.3s ease-out;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.btn-sign:hover {
+  color: #aa2f13;
+}
+
+.btn-sign-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 152px;
+  height: 58px;
+  font-size: 18px;
+  background: #FF4820;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+}
+
+/* Кнопки для мобильных */
+.mobile-buttons {
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-buttons .btn-sign {
+  text-align: center;
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.mobile-buttons .btn-sign-primary {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+
+/* Welcome (основная секция) */
+.welcome {
+  max-width: 100%;
+  overflow: hidden;
+  margin-top: 60px;
+}
+
+.welcome .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.welcome1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  min-width: 0;
+  width: 100%;
+  gap: 30px;
+}
+
+.welcome-wrapper {
+  flex: 1;
+  max-width: 700px;
+  min-width: 650px;
+  margin-top: 96px;
+  position: relative;
+  z-index: 2;
+}
+
+.welcome-left {
+  margin-bottom: 33px;
+  font-size: 62px;
+  line-height: 1.1;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  letter-spacing: -0.04em;
+  white-space: normal;
+  overflow: visible;
+  word-wrap: break-word;
+  word-break: normal;
+  max-width: 100%;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.welcome-desk {
+  margin-bottom: 44px;
+  width: 554px;
+  max-width: 100%;
+  font-size: 20px;
+  font-weight: 400;
+  color: #81AFDD;
+  line-height: 1.6;
+  word-wrap: break-word;
+  white-space: normal;
+  font-family: "Manrope", sans-serif;
+  text-indent: 0;
+}
+
+.welcome-image {
+  flex-shrink: 0;
+  width: 50%;
+  max-width: 550px;
+  margin-left: 0;
+  z-index: 1;
+}
+
+.welcome-image img {
+  max-width: 100%;
+  height: auto;
+  width: 100%;
+}
+
+.Email-welcome {
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  font-weight: 200;
+  display: flex;
+  width: 456px;
+  max-width: 100%;
+  height: 75px;
+  background: #052D56;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  outline: none;
+  padding: 0 20px;
+  box-sizing: border-box;
+  opacity: 0.7;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+}
+
+.Email-welcome::placeholder {
+  color: #81AFDD;
+  font-family: "Manrope", sans-serif;
+}
+
+.btn-welcome {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.welcome_start {
+  width: 174px;
+  height: 75px;
+  font-size: 20px;
+  background: #FF4820;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  font-family: "Manrope", sans-serif;
+}
+
+button.welcome_start:hover {
+  transition: all 0.3s ease-out;
+  background-color: #aa2f13;
+}
+
+.people-welcome {
+  display: flex;
+  align-items: center;
+  margin-top: 37px;
+}
+
+.people-welcome img {
+  width: 181.79px;
+  height: 38px;
+}
+
+.text-people {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 14px;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+}
+
+.welcome-web {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 80px;
+  gap: 46px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  flex-wrap: wrap;
+}
+
+.welcome-web img {
+  height: 24px;
+  object-fit: contain;
+}
+
+/* Про GPT-4 */
+.GPT {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 695px;
+  padding: 0;
+  box-sizing: border-box;
+  margin-top: 150px;
+}
+
+.text-overlow {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1226px;
+  margin: 0 auto;
+  justify-content: center;
+  background-image: url(../img/what_is_gpt_3_bg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding: 60px;
+  box-sizing: border-box;
+}
+
+.gpt-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 125px;
+}
+
+.gpt-title {
+  font-size: 24px;
+  position: relative;
+  padding-top: 22px;
+  color: #fff;
+  min-width: 205px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.gpt-title::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 3px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  border-radius: 2px;
+}
+
+.gpt-text-desk {
+  font-size: 16px;
+  color: #81AFDD;
+  line-height: 30px;
+  margin: 0;
+  max-width: 720px;
+  padding-top: 22px;
+  font-family: "Manrope", sans-serif;
+}
+
+.gpt-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 30px;
+}
+
+.text-gpt {
+  grid-column: 1 / 4;
+  grid-row: 1;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 58px;
+}
+
+.gpt-osnovn {
+  font-size: 34px;
+  font-weight: 800;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  flex: 1;
+  margin-right: 30px;
+  line-height: 1.3;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.gpt-podtext {
+  font-size: 16px;
+  color: #FF8A71;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 0;
+  white-space: nowrap;
+  margin-top: 20px;
+  transition: all 0.3s ease-out;
+  font-family: "Manrope", sans-serif;
+}
+
+.gpt-podtext:hover {
+  color: #ffffff;
+}
+
+.gpt-menu {
+  font-size: 24px;
+  position: relative;
+  padding-top: 22px;
+  color: #fff;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.gpt-menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 3px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  border-radius: 2px;
+}
+
+.text-gpt-menu {
+  margin-top: 97px;
+}
+
+.text-desk-men {
+  font-size: 16px;
+  color: #81AFDD;
+  padding-top: 26px;
+  line-height: 30px;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+/* будущее наступило */
+.future-is-now .container {
+  margin-top: 200px;
+}
+
+.future-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 80px;
+  align-items: flex-start;
+}
+
+.future-left {
+  flex: 0 0 auto;
+  min-width: 450px;
+  text-align: left; 
+}
+
+.future-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.future-item {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.future-text-wrapper {
+  flex: 1;
+  min-width: 200px;
+}
+
+.future-desc-wrapper {
+  flex: 2;
+  min-width: 300px;
+}
+
+.future-title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 45px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: normal;
+  word-wrap: break-word;
+  margin-bottom: 40px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.future-desc {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #FF8A71;
+  margin: 0;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.future-desc:hover {
+  color: #fff;
+}
+
+.right-text {
+  font-size: 18px;
+  position: relative;
+  white-space: normal;
+  padding-top: 10px;
+  margin: 0 0 10px 0;
+  line-height: 1.3;
+  color: #fff;
+  word-wrap: break-word;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.right-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 3px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  border-radius: 2px;
+}
+
+.right-text-2 {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #81AFDD;
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+}
+
+/* my apps с женщиной */
+.my-apps .container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 200px;
+}
+
+.my-apps-wrapper {
+  width: 479px;
+  margin-top: 200px;
+  flex-shrink: 0;
+  transform: translateX(-100px);
+}
+
+.my-apps-image {
+  margin-left: 30px;
+}
+
+.my-apps-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.my-apps-text-1 {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #81AFDD;
+  margin-bottom: 21px;
+  font-family: "Manrope", sans-serif;
+}
+
+.my-apps-title {
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 45px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: pre-line;
+  margin-bottom: 21px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.my-apps-desc {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 30px;
+  color: #FF8A71;
+  margin: 0;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  font-family: "Manrope", sans-serif;
+}
+
+.my-apps-desc:hover {
+  color: #ffffff;
+}
+
+/* CTA секция */
+.cta .container {
+  margin-top: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 200px;
+}
+
+.cta-background {
+  position: relative;
+  max-width: 1226px;
+  height: 172px;
+  background: linear-gradient(to right, #AE67FA, #F49867);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  text-align: left;
+  padding: 40px;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.btn-cta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.cta-start {
+  width: 189px;
+  height: 60px;
+  font-size: 20px;
+  background: #000000;
+  border-radius: 50px;
+  border: none;
+  color: #fff;
+  transition: all 0.3s ease-out;
+  font-family: "Manrope", sans-serif;
+}
+
+button.cta-start {
+  transition: all 0.3s ease-out;
+}
+
+button.cta-start:hover {
+  transition: all 0.3s ease-out;
+  background-color: #FF4820;
+}
+
+.cta-text-1 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #000000;
+  margin-bottom: 10px;
+  width: 100%;
+  font-family: "Manrope", sans-serif;
+}
+
+.cta-text-2 {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 35px;
+  color: #000000;
+  width: 100%;
+  margin: 0;
+  font-family: "ManropeBold", sans-serif;
+}
+
+/* секция блога */
+.blog {
+  max-width: 1226px;
+  margin: 155px auto 134px auto;
+  position: relative;
+  padding: 0 20px;
+  overflow: visible;
+}
+
+.blog-header {
+  position: relative;
+  z-index: 2;
+}
+
+.blog-header h2 {
+  width: auto;
+  max-width: 699px;
+  height: auto;
+  font-weight: 800;
+  font-size: 62px;
+  line-height: 75px;
+  letter-spacing: -0.04em;
+  background: linear-gradient(89.44deg, #AE67FA 1.84%, #F49867 97%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  text-align: left;
+  margin-right: 0;
+  white-space: nowrap;
+  overflow: visible;
+  max-width: none;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.blog-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  gap: 20px;
+  justify-content: space-between;
+  margin-top: 116px;
+  align-items: start;
+}
+
+.blog-card {
+  width: 100%;
+  font-size: 0;
+  display: flex;
+  flex-direction: column;
+  background: #042C54;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.blog-card.main-card {
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  height: 100%;
+  align-self: start;
+}
+
+.main-card-content {
+  width: 100%;
+  height: 100%;
+  background: #042C54;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-card img {
+  width: 100%;
+  height: 130.47px;
+  object-fit: cover;
+}
+
+.blog-card.main-card .main-card-img {
+  width: 100%;
+  height: 287.34px;
+  object-fit: cover;
+}
+
+.blog-content {
+  width: 100%;
+  padding: 20px;
+  background: #042C54;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  box-sizing: border-box;
+}
+
+.blog-read-more {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 34.95px;
+  letter-spacing: 0%;
+  text-align: left;
+  text-decoration: none;
+  display: inline-block;
+  box-sizing: border-box;
+  margin-top: auto;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+  color: #fff;
+  font-family: "Manrope", sans-serif;
+}
+
+.blog-read-more:hover {
+  color: #FF8A71;
+  text-decoration: underline;
+}
+
+.main-card-text-container {
+  width: 100%;
+  padding: 25px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.blog-text-container {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-bottom: 15px;
+}
+
+.blog-date {
+  font-weight: 300;
+  font-size: 11.65px;
+  line-height: 34.95px;
+  text-align: left;
+  letter-spacing: 0;
+  width: 100%;
+  margin-bottom: 10px;
+  color: #fff;
+  font-family: "ManropeLight", sans-serif;
+}
+
+.blog-title {
+  font-weight: 800;
+  font-size: 18.5px;
+  line-height: 30.29px;
+  margin: 0 0 15px 0;
+  width: 100%;
+  flex-grow: 1;
+  color: #fff;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.main-card-blog-title {
+  font-weight: 800;
+  font-size: 25.11px;
+  line-height: 30.29px;
+  width: 100%;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+  color: #fff;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.main-card-blog-date {
+  font-weight: 300;
+  font-size: 11.65px;
+  line-height: 34.95px;
+  text-align: left;
+  letter-spacing: 0;
+  width: 100%;
+  height: auto;
+  position: static;
+  margin: 0 0 10px 0;
+  color: #fff;
+  font-family: "ManropeLight", sans-serif;
+}
+
+/* Секция "Будущее" */
+.section-future {
+  max-width: 100%;
+  background: #031B34;
+  margin: 133.79px auto 18px auto;
+  position: relative;
+  padding-top: 196px;
+  padding-bottom: 103px;
+  box-sizing: border-box;
+}
+
+.section-future-content {
+  max-width: 1226px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.section-future-title {
+  width: 821px;
+  max-width: 90%;
+  background: linear-gradient(89.44deg, #AE67FA 1.84%, #F49867 97%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  font-size: 62px;
+  font-weight: 800;
+  line-height: 75px;
+  letter-spacing: -0.04em;
+  text-align: center;
+  margin-bottom: 64px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.section-future-button {
+  width: 337.58px;
+  height: 65px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border: 1px solid #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  margin-bottom: 80px;
+  cursor: pointer;
+  background: transparent;
+  font-family: "Manrope", sans-serif;
+}
+
+.section-future-button:hover {
+  color: rgba(255, 255, 255, 1);
+  border-color: #FF4820;
+  background-color: rgba(255, 72, 32, 0.1);
+}
+
+.information-future {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  flex-wrap: nowrap;
+  gap: 30px;
+  margin-top: 140px;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+.footer-column h3 {
+  color: #fff;
+  margin-bottom: 15px;
+  font-size: 18px;
+  padding-bottom: 10px;
+  font-family: "ManropeBold", sans-serif;
+}
+
+.light-text {
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 34px;
+  font-weight: 200;
+  white-space: nowrap;
+  font-family: "ManropeLight", sans-serif;
+}
+
+.footer-column p {
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 34px;
+  font-weight: 200;
+  white-space: nowrap;
+  font-family: "ManropeLight", sans-serif;
+}
+
+.footer-column-link {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-column-link a {
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 34px;
+  font-weight: 200;
+  text-decoration: none;
+  text-align: left;
+  white-space: nowrap;
+  min-width: 100px;
+  cursor: pointer;
+  transition: color 0.3s ease-out;
+  font-family: "ManropeLight", sans-serif;
+}
+
+.footer-column-link a:hover {
+  color: #FF4820;
+}
+
+.straight-columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: nowrap;
+  flex: 1;
+  gap: 130px;
+}
+
+.future-img {
+  margin-bottom: -23px;
+  width: 130px;
+}
+
+footer {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.footer-text {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Manrope", sans-serif;
+}
+
+.link-networks {
+  font-weight: 300;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 34px;
+  white-space: nowrap;
+  font-family: "ManropeLight", sans-serif;
+}
+
+/* Laptop L - 1440px */
+@media (max-width: 1440px) {
+  .container {
+    max-width: 1200px;
+  }
+
+  .header-list {
+    gap: 30px;
+    margin-left: 40px;
+  }
+
+  .desktop-buttons {
+    margin-left: 150px;
+    gap: 30px;
+  }
+
+  .welcome-left {
+    font-size: 56px;
+  }
+
+  .welcome-desk {
+    width: 500px;
+  }
+
+  .Email-welcome {
+    width: 400px;
+  }
+
+  .section-future-title {
+    font-size: 52px;
+    line-height: 65px;
+  }
+}
+
+/* Laptop - 1024px */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .header-list {
+    gap: 20px;
+    margin-left: 20px;
+  }
+
+  .desktop-buttons {
+    margin-left: 80px;
+    gap: 20px;
+  }
+
+  .btn-sign-primary {
+    width: 130px;
+    height: 50px;
+    font-size: 16px;
+  }
+
+  .welcome1 {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-wrapper {
+    margin-top: 50px;
+    max-width: 100%;
+    min-width: auto;
+  }
+
+  .welcome-left {
+    font-size: 48px;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .welcome-desk {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 44px;
+  }
+
+  .btn-welcome {
+    justify-content: center;
+  }
+
+  .welcome-image {
+    margin: 40px 0 0 0;
+    width: 60%;
+    text-align: center;
+    order: -1;
+  }
+
+  .welcome-image img {
+    max-width: 80%;
+    height: auto;
+  }
+
+  .gpt-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .text-gpt {
+    grid-column: 1 / 3;
+  }
+
+  .future-grid {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .future-left {
+    min-width: 100%;
+  }
+
+  .my-apps .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .my-apps-wrapper {
+    transform: none;
+    width: 100%;
+    margin-top: 50px;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .blog-card.main-card {
+    grid-column: 1 / 3;
+    grid-row: 1;
+  }
+
+  .information-future {
+    flex-direction: column;
+    gap: 50px;
+  }
+
+  .straight-columns {
+    gap: 80px;
+  }
+
+  .footer-column:first-child {
+    margin-right: 0;
+  }
+}
+
+/* Tablet - 768px */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+
+  .header {
+    position: relative;
+    z-index: 100;
+  }
+
+  .nav-header {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #040C18;
+    padding: 30px 20px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    z-index: 99;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease-out;
+    flex-direction: column;
+  }
+
+  .nav-header.active {
+    display: flex !important;
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .header-list {
+    flex-direction: column;
+    margin-left: 0;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .header-list li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header .container {
+    position: relative;
+  }
+
+  .nav-button {
+    display: flex;
+  }
+
+  .desktop-buttons {
+    display: none;
+  }
+
+  .mobile-buttons {
+    display: flex;
+  }
+
+  .welcome-left {
+    font-size: 36px;
+  }
+
+  .welcome-desk {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .Email-welcome {
+    width: 100%;
+    height: 60px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+
+  .btn-welcome {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .welcome_start {
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    border-radius: 5px;
+  }
+
+  .welcome-web {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .gpt-header {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .gpt-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .text-gpt {
+    grid-column: 1;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .future-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cta-background {
+    height: auto;
+    padding: 30px 20px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .btn-cta {
+    position: static;
+    transform: none;
+    margin-top: 20px;
+    justify-content: center;
+  }
+
+  .cta-start {
+    margin-right: 0;
+    width: 200px;
+  }
+
+  .blog-header h2 {
+    font-size: 42px;
+    line-height: 55px;
+    white-space: normal;
+  }
+
+  .blog-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .blog-card.main-card {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .blog-card.main-card .main-card-img {
+    height: 200px;
+  }
+
+  .main-card-blog-title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .section-future-title {
+    font-size: 42px;
+    line-height: 55px;
+  }
+
+  .section-future-button {
+    width: 280px;
+    height: 55px;
+    font-size: 16px;
+  }
+
+  .straight-columns {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .footer-column p,
+  .footer-column-link a {
+    white-space: normal;
+  }
+}
+
+/* Mobile L - 425px */
+@media (max-width: 425px) {
+  .container {
+    padding: 0 10px;
+  }
+
+  .welcome-left {
+    font-size: 28px;
+  }
+
+  .welcome-desk {
+    font-size: 16px;
+  }
+
+  .people-welcome {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .text-people {
+    margin-left: 0;
+  }
+
+  .welcome-web {
+    gap: 20px;
+  }
+
+  .welcome-web img {
+    max-width: 80px;
+  }
+
+  .gpt-title,
+  .gpt-menu {
+    font-size: 20px;
+  }
+
+  .gpt-osnovn {
+    font-size: 26px;
+  }
+
+  .future-title {
+    font-size: 26px;
+    line-height: 35px;
+  }
+
+  .right-text {
+    font-size: 16px;
+  }
+
+  .cta-text-2 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .cta-start {
+    width: 160px;
+    height: 50px;
+    font-size: 18px;
+  }
+
+  .blog-header h2 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .blog-grid {
+    gap: 20px;
+  }
+
+  .blog-content {
+    padding: 15px;
+  }
+
+  .main-card-text-container {
+    padding: 15px;
+  }
+
+  .blog-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .main-card-blog-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  .section-future-title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .section-future-button {
+    width: 250px;
+    height: 50px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile M - 375px */
+@media (max-width: 375px) {
+  .welcome-left {
+    font-size: 24px;
+  }
+
+  .blog-header h2 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .section-future-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .blog-card.main-card .main-card-img {
+    height: 150px;
+  }
+
+  .desktop-buttons {
+    gap: 20px;
+  }
+
+  .btn-sign-primary {
+    width: 120px;
+    height: 45px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 769px) {
+  .desktop-buttons {
+    display: flex;
+  }
+
+  .mobile-buttons {
+    display: none !important;
+  }
+
+  .nav-header {
+    display: flex !important;
+    position: static;
+    opacity: 1;
+    transform: none;
+    padding: 0;
+    box-shadow: none;
+    background: transparent;
+  }
+
+  .nav-button {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .information-future {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .footer-column {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-column-link {
+    align-items: center;
+    text-align: center;
+  }
+  
+  .straight-columns {
+    align-items: center;
+  }
+  
+  .light-text {
+    text-align: center;
+  }
+}
